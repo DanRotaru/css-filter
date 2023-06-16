@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;800&display=swap');
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+$radius: 32px;
+
+body {
+  font: 16px "Noto Sans", sans-serif;
+  max-width: 1200px;
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #F6F8FF;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  display: flex;
+  gap: 20px;
+}
+
+.color {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+
+  .pixel {
+    width: 100%;
+    height: 200px;
+    margin-top: auto;
+    border-radius: $radius;
+    background-color: #000;
+  }
+}
+
+header {
+  padding: 10px 0;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+
+.title {
+  font: 800 34px/1.3 "Noto Sans", sans-serif;
+}
+
+.subtitle {
+  color: #777;
+  font-size: 15px;
+  margin: 5px 0 30px;
+}
+
+.input {
+  display: inline-flex;
+  align-items: center;
+  background-color: #fff;
+  --border-width: 1px;
+  --border: #E1E6F9;
+  box-shadow: inset 0 0 0 var(--border-width) var(--border);
+  padding: 10px;
+  border-radius: 10px;
+  transition: box-shadow 0.25s;
+
+  &:focus-within {
+    --border-width: 1.5px;
+    --border: #275EFE;
+  }
+
+  #color-choice {
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+    position: absolute;
+    left: -5px;
+    top: -5px;
+  }
+
+  input {
+    width: calc(100% - 192px);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font: inherit;
+    color: #646B8C;
+    text-transform: uppercase;
+  }
+}
+
+.label {
+  &-target {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+
+  &-color {
+    position: relative;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    margin-right: 6px;
+    flex-shrink: 0;
+  }
+}
+
+button {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid rgba(22, 48, 75, 0.2);
+  border-radius: 6px;
+  padding: 8px 20px;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: rgba(27, 36, 44, 0.12) 0 1px 2px;
+
+  transition: 0.15s ease;
+  transition-property: color, background-color, border-color, box-shadow;
+
+  &:hover {
+    color: #3a424a;
+    background-color: #fefefe;
+    border-color: rgb(158, 168, 179);
+  }
+
+  &:active {
+    color: #272e35;
+    background-color: #F6F6F8;
+    border-color: rgb(126, 139, 153);
+  }
+}
+
+#filterPixel {
+  background-color: #000;
+}
+
+#result {
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 40px rgba(29, 58, 83, 0.15);
+  border-radius: 32px;
+  padding: 20px;
+  margin-top: 24px;
+  color: #4078F2;
+  user-select: all;
+
+  &:empty {
+    display: none;
+  }
+
+  k {
+    color: #000;
+  }
+
+  n {
+    color: #986801;
+  }
+}
